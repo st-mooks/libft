@@ -1,0 +1,16 @@
+#include "libft.h"
+
+
+{
+	
+}
+/*
+int	main(int argc, char *argv[])
+{
+	if (argc != )
+	{
+		printf("INVALID/EMPTY INPUT. EXITING\n");
+		exit(EXIT_FAILURE);
+	}
+	return (0);
+}*/
