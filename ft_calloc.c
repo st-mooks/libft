@@ -6,13 +6,13 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:35:43 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 07:37:44 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/24 09:24:49 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		valid_params(size_t nmemb, size_t size)
+int	valid_params(size_t nmemb, size_t size)
 {
 	if (size == 0)
 		return (0);
@@ -33,7 +33,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(alloc_arr, nmemb * size);
 	return (alloc_arr);
 }
-
+/*
 int	main(void)
 {
 	int		*ft_calloc_return;
@@ -50,4 +50,4 @@ int	main(void)
 	free(ft_calloc_return);
 	free(calloc_return);
 	return (0);
-}
+}*/

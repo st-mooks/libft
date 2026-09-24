@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 09:16:57 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/23 10:30:34 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/24 09:25:57 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ int	main(void)
 	int		c = (int)'?';
 	size_t	n = INT_MIN;
 
-	printf("ft_memchr:\ns = %s c = %c\nreturn = %p\n", (char *)s, c, ft_memchr(s, c, n));
-	printf("****\nmemchr:\ns = %s c = %c\nreturn = %p\n", (char *)s, c, memchr(s, c, n));
+	printf("ft_memchr:\ns = %s c = %c\nreturn = %p\n"
+			"", (char *)s, c, ft_memchr(s, c, n));
+	printf("****\nmemchr:\ns = %s c = %c\nreturn = %p\n"
+			"", (char *)s, c, memchr(s, c, n));
 	return (0);
 }*/
