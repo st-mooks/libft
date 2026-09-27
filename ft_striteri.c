@@ -1,33 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 09:11:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 10:40:50 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/27 11:53:52 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/27 12:02:44 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	unsigned int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		f(i, s + i);
+		i++;
+	}
 }
 /*
+void	capitalise(unsigned i, char *s)
+{
+	(void) i;
+	if (*s >= 'a' && *s <= 'z')
+		*s -= 32;
+}
+
 int	main(int argc, char *argv[])
 {
-	int	c;
 	if (argc != 2)
 	{
 		printf("INVALID/EMPTY INPUT. EXITING\n");
 		exit(EXIT_FAILURE);
 	}
-	c = ft_atoi(argv[1]);
-	printf("ft_toupper(%c) = %c\n", c, ft_toupper(c));
+	ft_striteri(argv[1], capitalise);
+	printf("function=capitalise\nresult str="
+			"%s", argv[1]);
 	return (0);
 }*/

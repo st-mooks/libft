@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 09:11:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 10:40:50 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/27 13:24:39 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/27 13:49:34 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	t_list	*new_list;
+
+	new_list = malloc(sizeof(t_list));
+	new_list->content = content;
+	new_list->next = NULL;
+	return (new_list);
 }
 /*
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	int	c;
-	if (argc != 2)
-	{
-		printf("INVALID/EMPTY INPUT. EXITING\n");
-		exit(EXIT_FAILURE);
-	}
-	c = ft_atoi(argv[1]);
-	printf("ft_toupper(%c) = %c\n", c, ft_toupper(c));
-	return (0);
+	t_list	*linked_list;
+
+	linked_list = ft_lstnew("This is a the content of the first element");
+	printf("linked_list content=%s\nlinked_lest next==NULL: %d"
+			"", (char *)linked_list->content, linked_list->next == NULL);
 }*/

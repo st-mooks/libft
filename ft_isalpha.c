@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 13:28:49 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/22 17:03:15 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/24 10:36:27 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char *argv[])
 		printf("INVALID/EMPTY INPUT. EXITING\n");
 		exit(EXIT_FAILURE);
 	}
-	c = (int)argv[1][0];
+	c = ft_atoi(argv[1]);
 	printf("%c is ", c);
 	if (!ft_isalpha(c))
 		printf("not ");

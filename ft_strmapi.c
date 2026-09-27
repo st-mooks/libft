@@ -1,33 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 09:11:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 10:40:50 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/27 10:50:00 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/27 11:53:04 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	char			*result;
+	unsigned int	i;
+
+	result = malloc(ft_strlen(s) * sizeof(char));
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	return (result);
 }
 /*
+char	capitalise(unsigned int i, char c)
+{
+	(void)i;
+
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
+}
+
 int	main(int argc, char *argv[])
 {
-	int	c;
+	char	*str;
+
 	if (argc != 2)
 	{
 		printf("INVALID/EMPTY INPUT. EXITING\n");
 		exit(EXIT_FAILURE);
 	}
-	c = ft_atoi(argv[1]);
-	printf("ft_toupper(%c) = %c\n", c, ft_toupper(c));
+	str = ft_strmapi(argv[1], capitalise);
+	printf("original str=%s\nfuntction to apply=capitalise\n"
+			"result str=%s\n", argv[1], str);
 	return (0);
 }*/

@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 14:06:17 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/22 17:03:43 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/24 10:36:51 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char *argv[])
 		printf("INVALID/EMPTY INPUT. EXITING\n");
 		exit(EXIT_FAILURE);
 	}
-	c = (int) argv[1][0];
+	c = ft_atoi(argv[1]);
 	printf("%c is ", c);
 	if (!ft_isdigit(c))
 		printf("not ");

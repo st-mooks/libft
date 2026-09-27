@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/22 12:34:07 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 11:13:21 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/24 12:01:16 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/24 13:28:18 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	ft_memset(s, '\0', n);
-	return (s);
+	size_t	alloc_size;
+	char	*join_s;
+
+	alloc_size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	join_s = malloc(alloc_size);
+	if (!join_s)
+		return (NULL);
+	ft_strlcpy(join_s, s1, alloc_size);
+	ft_strlcat(join_s, s2, alloc_size);
+	return (join_s);
 }
 /*
 int	main(void)
 {
-	void	*s;
-	int		i;
+	const char	*s1 = "BLOOD FOR THE BLOOD GOD!";
+	const char	*s2 = "SKULLS FOR THE SKULL THRONE!";
+	char		*s3;
 
-	s = malloc(20);
-	printf("Before:\n");
-	i = 0;
-	while (i < 20)
-	{
-		((char *)s)[i] = 1;
-		printf("%d", ((char *)s)[i++]);
-	}
-	ft_bzero(s, 10);
-	printf("\nAfter:\n");
-	i = 0;
-	while (i < 20)
-		printf("%d", ((char *)s)[i++]);
+	s3 = ft_strjoin(s1, s2);
+	printf("s1=%s\ns2=%s\ns3=%s\n", s1, s2, s3);
 	return (0);
 }*/

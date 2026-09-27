@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 10:44:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 09:25:22 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/24 13:30:06 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	n;
 
-	if (ft_strlen((char *)little) == 0)
+	if (ft_strlen(little) == 0)
 		return ((char *)big);
 	i = 0;
 	while (big[i] && i < len - 1)
@@ -41,11 +41,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /*
 int	main(void)
 {
-	const char	*big = "tex";
+	const char	*big = "big text";
 	const char	*little = "text";
-	size_t		len = 6;
+	size_t		len = SIZE_MAX;
 
 	printf("ft_strnstr:\nbig = %s\nlittle = %s\nlen = %zu\nreturn = %p"
 			"\n",big, little, len, ft_strnstr(big, little, len));
+	printf("****\nstrnstr:\nbig = %s\nlittle = %s\nlen = %zu\nreturn = %p"
+			"\n",big, little, len, strnstr(big, little, len));
 	return (0);
 }*/

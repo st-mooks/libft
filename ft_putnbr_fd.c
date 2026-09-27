@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 09:11:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 10:40:50 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/27 12:43:10 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/27 12:50:07 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	char	*str;
+
+	str = ft_itoa(n);
+	ft_putstr_fd(str, fd);
 }
 /*
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	int	c;
-	if (argc != 2)
-	{
-		printf("INVALID/EMPTY INPUT. EXITING\n");
-		exit(EXIT_FAILURE);
-	}
-	c = ft_atoi(argv[1]);
-	printf("ft_toupper(%c) = %c\n", c, ft_toupper(c));
+	ft_putnbr_fd(INT_MAX, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(INT_MIN, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(0, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(42, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-42, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(100, 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(-100, 1);
 	return (0);
 }*/

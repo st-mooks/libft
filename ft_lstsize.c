@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/22 12:34:07 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 11:13:21 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/27 14:15:32 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/27 14:24:59 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+unsigned int	ft_lstsize(t_list *lst)
 {
-	ft_memset(s, '\0', n);
-	return (s);
+	unsigned int	size;
+
+	size = 1;
+	while (lst->next)
+	{
+		lst = lst->next;
+		size++;
+	}
+	return (size);
 }
 /*
 int	main(void)
 {
-	void	*s;
-	int		i;
+	t_list	*lst1;
+	t_list	*lst2;
+	t_list	*lst3;
 
-	s = malloc(20);
-	printf("Before:\n");
-	i = 0;
-	while (i < 20)
-	{
-		((char *)s)[i] = 1;
-		printf("%d", ((char *)s)[i++]);
-	}
-	ft_bzero(s, 10);
-	printf("\nAfter:\n");
-	i = 0;
-	while (i < 20)
-		printf("%d", ((char *)s)[i++]);
+	lst1 = ft_lstnew("original");
+	lst2 = ft_lstnew("second");
+	lst3 = ft_lstnew("newest)");
+	ft_lstadd_front(&lst1, lst2);
+	ft_lstadd_front(&lst1, lst3);
+	printf("Linked list size (ls1) = %u (which is the same as (ls3) = %d)"
+			"\n", ft_lstsize(lst1), ft_lstsize(lst3));
 	return (0);
 }*/

@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 09:11:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 10:40:50 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/27 12:29:53 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/27 12:38:36 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	write(fd, &c, 1);
 }
 /*
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	int	c;
-	if (argc != 2)
-	{
-		printf("INVALID/EMPTY INPUT. EXITING\n");
-		exit(EXIT_FAILURE);
-	}
-	c = ft_atoi(argv[1]);
-	printf("ft_toupper(%c) = %c\n", c, ft_toupper(c));
+	ft_putchar_fd('m', 1);
 	return (0);
 }*/

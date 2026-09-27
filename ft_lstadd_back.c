@@ -1,0 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/27 14:38:31 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/27 14:48:49 by mbadarin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void ft_lstadd_back(t_list **lst, t_list *new)
+{
+	while ((*lst) -> next)
+		*lst = (*lst) -> next;
+	(*lst) -> next = new;
+}
+/*
+int	main(void)
+{
+	t_list	*lst1;
+	t_list	*lst2;
+	t_list	*lst3;
+
+	lst1 = ft_lstnew("origianl");
+	printf("orignal element pointer=%p\n", lst1);
+	lst2 = ft_lstnew("second");
+	printf("second element pointer-to become head-=%p\n", lst2);
+	lst3 = ft_lstnew("newest");
+	printf("newest element pointer-to become last-=%p\n", lst3);
+	ft_lstadd_front(&lst1, lst2);
+	ft_lstadd_back(&lst1, lst3);
+	printf("Last element in linked list (aka. \"newewst\" element)=%p"
+			" with content=%s"
+			"", ft_lstlast(lst1), (char *)ft_lstlast(lst1) -> content);
+	return (0);
+}*/

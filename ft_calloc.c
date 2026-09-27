@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:35:43 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 09:24:49 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/24 11:11:33 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	valid_params(size_t nmemb, size_t size)
 {
-	if (size == 0)
+	if (size == 0 || nmemb == 0)
 		return (0);
 	if (SIZE_MAX / size < nmemb)
 		return (0);
@@ -39,15 +39,25 @@ int	main(void)
 	int		*ft_calloc_return;
 	int		*calloc_return;
 	size_t	nmemb;
+	size_t	size;
 
-	nmemb = 10;
-	ft_calloc_return = ft_calloc(nmemb, sizeof(int));
-	calloc_return = calloc(nmemb, sizeof(int));
-	printf("ft_calloc:\ncontents of ft_calloc[0] = %d\n"
-			"", *ft_calloc_return);
-	printf("calloc:\ncontents of calloc[0] = %d\n"
-			"", *calloc_return);
+	nmemb = SIZE_MAX;
+	size = SIZE_MAX;
+	ft_calloc_return = ft_calloc(nmemb, size);
+	calloc_return = calloc(nmemb, size);
+	if (ft_calloc_return)
+		printf("ft_calloc:\ncontents of ft_calloc[0] = %d\n"
+				"", *ft_calloc_return);
+	else
+		printf("ft_calloc_return == NULL: %d\n", ft_calloc_return == NULL);
+	if (calloc_return)
+		printf("calloc:\ncontents of calloc[0] = %d\n"
+				"", *calloc_return);
+	else
+		printf("calloc_return == NULL: %d\n", calloc_return == NULL);
 	free(ft_calloc_return);
+	printf("ft_calloc_return successfully freed!\n");
 	free(calloc_return);
+	printf("calloc_return successfully freed!\n");
 	return (0);
 }*/

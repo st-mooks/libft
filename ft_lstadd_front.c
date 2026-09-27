@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 09:11:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 10:40:50 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/27 13:50:20 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/27 14:14:26 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	new->next = *lst;
+	*lst = new;
 }
 /*
-int	main(int argc, char *argv[])
+int	main(void)
 {
-	int	c;
-	if (argc != 2)
-	{
-		printf("INVALID/EMPTY INPUT. EXITING\n");
-		exit(EXIT_FAILURE);
-	}
-	c = ft_atoi(argv[1]);
-	printf("ft_toupper(%c) = %c\n", c, ft_toupper(c));
+	t_list	*lst;
+	t_list	*new;
+
+	lst = ft_lstnew("original");
+	new = ft_lstnew("new");
+	printf("BEFORE:\nhead pointer=%p\nnew pointer=%p\n", lst, new);
+	ft_lstadd_front(&lst, new);
+	printf ("AFTER:\nhead pointer=%p\nnew.next=%p\n", lst, new->next);
 	return (0);
 }*/
