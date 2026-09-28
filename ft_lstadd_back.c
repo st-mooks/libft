@@ -6,17 +6,17 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:38:31 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/27 14:48:49 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/28 14:34:47 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while ((*lst) -> next)
-		*lst = (*lst) -> next;
-	(*lst) -> next = new;
+	while ((*lst)->next)
+		*lst = (*lst)->next;
+	(*lst)->next = new;
 }
 /*
 int	main(void)

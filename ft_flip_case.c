@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_flip_case.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
+/*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/27 14:49:16 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/28 14:43:11 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/28 12:55:08 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/28 14:33:42 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_flip_case(void *content)
 {
-	del(lst->content);
-	free (lst);
+	char	*str;
+
+	str = (char *)content;
+	while (*str)
+	{
+		if (ft_isalpha(*str))
+		{
+			if (*str > 'a' && *str < 'z')
+				*str -= 32;
+			else
+				*str += 32;
+		}
+		str++;
+	}
 }
-/*
-int	main(void)
-{
-	t_list	*lst1;
-	
-	lst1 = ft_init_node("original");
-	ft_lstdelone(lst1, ft_free_content);
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:27:23 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/27 14:37:13 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/28 14:44:00 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst -> next)
-		lst = lst -> next;
+	while (lst->next)
+		lst = lst->next;
 	return (lst);
 }
 /*
@@ -35,6 +35,6 @@ int	main(void)
 	ft_lstadd_front(&lst1, lst3);
 	printf("Last element in linked list (aka. \"original\" element)=%p"
 			" with content=%s"
-			"", ft_lstlast(lst1), (char *)ft_lstlast(lst1) -> content);
+			"", ft_lstlast(lst1), (char *)ft_lstlast(lst1)->content);
 	return (0);
 }*/

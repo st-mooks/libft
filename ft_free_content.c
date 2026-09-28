@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_free_content.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
+/*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/27 14:49:16 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/28 14:43:11 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/28 12:01:05 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/28 12:01:40 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_free_content(void *content)
 {
-	del(lst->content);
-	free (lst);
+	free(content);
 }
-/*
-int	main(void)
-{
-	t_list	*lst1;
-	
-	lst1 = ft_init_node("original");
-	ft_lstdelone(lst1, ft_free_content);
-	return (0);
-}*/

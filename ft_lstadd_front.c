@@ -23,8 +23,8 @@ int	main(void)
 	t_list	*lst;
 	t_list	*new;
 
-	lst = ft_lstnew("original");
-	new = ft_lstnew("new");
+	lst = ft_init_node("original");
+	new = ft_init_node("new");
 	printf("BEFORE:\nhead pointer=%p\nnew pointer=%p\n", lst, new);
 	ft_lstadd_front(&lst, new);
 	printf ("AFTER:\nhead pointer=%p\nnew.next=%p\n", lst, new->next);
