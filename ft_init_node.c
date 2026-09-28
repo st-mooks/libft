@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 11:46:08 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/28 19:32:59 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/28 20:04:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_init_node(void *str)
 	t_list	*lst;
 	char	*content;
 
-	content = ft_strdup((const char *)str)
+	content = ft_strdup((const char *)str);
 	if (!content)
 		return (NULL);
 	lst = ft_lstnew(content);

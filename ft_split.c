@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 13:03:41 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 15:34:32 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/28 20:09:15 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*next_word(char const *s, char c)
 {
 	long	word_len;
 	char	*word;
-	size_t	i;
+	long	i;
 
 	word_len = ft_strchr(s, c) - s;
 	if (word_len < 0)
