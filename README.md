@@ -1,7 +1,7 @@
 # LIBFT
 ## A 42 Amman project
 
-*This project has been created as part of the 42 curriculum by <mbadarin>*
+*This project has been created as part of the 42 curriculum by mbadarin*
 ### Description
 A library conatinig my impliminations of several functions that do string, memory, and linked list manipulation.
 ### Instructions
@@ -57,6 +57,3 @@ manual pages for each implemented function (if available).
 | ft_lstclear | void ft_lstclear(t_list \*\*lst, void (*del)(void *)) | N/A | Deletes node *lst* and all subsequent nodes, and uses function *del* to delete its contents. |
 | ft_lstiter | void ft_lstiter(t_list \*\*lst, void(*f)(void *)) | N/A | Iterates over every node in t_list *lst* and calls function *f* over the content of each node. |
 | ft_lstmap | t_list *ft_lstmap(t_list \*lst, void \*(\*f)(void *), void (\*d)(void *)) | t_list | Iterates over t_list *lst*, calling function *f* over content of each node, which are used to create and return a new t_list. Function *d* is used to delete the contents of the newly created t_list if needed. |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
