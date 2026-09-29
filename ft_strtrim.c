@@ -6,13 +6,13 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 12:13:39 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 13:31:09 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 09:16:35 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	char_in_set(const char *set, char c)
+static int	char_in_set(const char *set, char c)
 {
 	while (*set)
 		if (c == *set++)
@@ -20,7 +20,7 @@ int	char_in_set(const char *set, char c)
 	return (0);
 }
 
-char	*trim_start(const char *s, const char *set)
+static char	*trim_start(const char *s, const char *set)
 {
 	char	*trim_s;
 	size_t	alloc_size;
@@ -38,7 +38,7 @@ char	*trim_start(const char *s, const char *set)
 	return (trim_s);
 }
 
-void	trim_end(char *s, const char *set)
+static void	trim_end(char *s, const char *set)
 {
 	size_t	i;
 

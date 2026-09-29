@@ -6,13 +6,13 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:36:05 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/27 10:45:36 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 09:06:53 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	abs_val(int n)
+static long	abs_val(int n)
 {
 	long	l;
 
@@ -22,7 +22,7 @@ long	abs_val(int n)
 	return (l);
 }
 
-void	flip_str(char *str, int len)
+static void	flip_str(char *str, int len)
 {
 	int		i;
 	int		n;
@@ -47,7 +47,7 @@ void	flip_str(char *str, int len)
 	free(str_flipped);
 }
 
-void	parse_positive(long n, char *str, int start_idx)
+static void	parse_positive(long n, char *str, int start_idx)
 {
 	int		i;
 	char	*base;
@@ -66,7 +66,7 @@ void	parse_positive(long n, char *str, int start_idx)
 	flip_str(str, i);
 }
 
-void	parse_negative(int n, char *str)
+static void	parse_negative(int n, char *str)
 {
 	long	l;
 

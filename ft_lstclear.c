@@ -6,16 +6,11 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 15:18:01 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/28 14:35:29 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 09:12:06 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	free_content(void	*content)
-{
-	free(content);
-}
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -30,6 +25,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	ft_lstdelone(*lst, del);
 }
 /*
+void	free_content(void *content)
+{
+	free(content);
+}
 int	main(void)
 {
 	t_list	*lst1;
@@ -41,6 +40,6 @@ int	main(void)
 	lst3 = ft_init_node("newest");
 	ft_lstadd_back(&lst1, lst2);
 	ft_lstadd_back(&lst2, lst3);
-	ft_lstclear(&lst1, ft_free_content);
+	ft_lstclear(&lst1, free_content);
 	return (0);
 }*/

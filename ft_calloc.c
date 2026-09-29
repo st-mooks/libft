@@ -6,13 +6,13 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:35:43 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 11:11:33 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 09:05:21 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	valid_params(size_t nmemb, size_t size)
+static int	valid_params(size_t nmemb, size_t size)
 {
 	if (size == 0 || nmemb == 0)
 		return (0);

@@ -46,7 +46,6 @@ manual pages for each implemented function (if available).
 | ft_memcpy | void *ft_memcpy(void *dest, const void *src, size_t n) | void * | Copies *n* bytes from buffer *src* into buffer *dest*. Not safe in case of overlapping of buffers. |
 | ft_memcmp | int *ft_memcmp(void *s1, void *s2, sizt_t n) | int: 0 if the buffers are identical, the difference between the first differing bytes otherwise | Compares the first *n* bytes of buffer *s1* and buffer *s2*. Returns (0) if the buffers are identical, and the difference between the first differing bytes otherwise. |
 | ft_memmove | void *ft_memmove(void *dest, const void *src, size_t n) | void * | Copies *n* bytes from buffer *src* into buffer *dest*. Checks for overlapping and adjusts copying direction to avoid overwriting the *src* before copying it. |
-| ft_free_content | void ft_free_content(void *content) | N/A | Frees the content of a t_list node. (Used as an example function with ft_lstdelone, and ft_lstclear). |
 | ft_lstnew | t_list *ft_lstnew(void *content) | t_list * | Creates a new t_list node and sets its content to *content*. |
 | ft_init_node | t_list *ft_init_node(void *str) | t_list * | Copies string *str* into a new memory location and reates a new t_list node and sets its content to *str* (*str* is always assumed to be a string. Used to simplify creating nodes during testing). |
 | ft_lstsize | unisgned int ft_lst_size(t_list *lst) | unsigned int: Number of nodes | Returns the total number of nodes in a t_list starting at *lst*. |
