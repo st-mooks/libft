@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:38:31 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/28 14:34:47 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 10:21:46 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ int	main(void)
 	t_list	*lst2;
 	t_list	*lst3;
 
-	lst1 = ft_lstnew("origianl");
+	lst1 = ft_init_node("origianl");
 	printf("orignal element pointer=%p\n", lst1);
-	lst2 = ft_lstnew("second");
-	printf("second element pointer-to become head-=%p\n", lst2);
-	lst3 = ft_lstnew("newest");
+	lst2 = ft_init_node("second");
+	printf("second element pointer=%p\n", lst2);
+	lst3 = ft_init_node("newest");
 	printf("newest element pointer-to become last-=%p\n", lst3);
-	ft_lstadd_front(&lst1, lst2);
-	ft_lstadd_back(&lst1, lst3);
+	ft_lstadd_back(&lst1, lst2);
+	ft_lstadd_back(&lst2, lst3);
 	printf("Last element in linked list (aka. \"newewst\" element)=%p"
 			" with content=%s"
-			"", ft_lstlast(lst1), (char *)ft_lstlast(lst1) -> content);
+			"", ft_lstlast(lst3), (char *)ft_lstlast(lst3) -> content);
 	return (0);
 }*/

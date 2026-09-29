@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flip_case.c                                     :+:      :+:    :+:   */
+/*   ft_free_content.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
+/*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/28 12:55:08 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 09:05:33 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/29 09:44:52 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/09/29 09:50:41 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_flip_case(void *content)
+void	ft_free_content(void *content)
 {
-	char	*str;
-
-	str = (char *)content;
-	while (*str)
-	{
-		if (ft_isalpha(*str))
-		{
-			if (*str > 'a' && *str < 'z')
-				*str -= 32;
-			else
-				*str += 32;
-		}
-		str++;
-	}
+	free(content);
 }

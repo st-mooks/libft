@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 09:27:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/28 19:33:13 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 10:46:46 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ char	*ft_strdup(const char *s)
 	char	*str_cpy;
 
 	size = ft_strlen(s) + 1;
-	str_cpy = malloc(size);
+	str_cpy = malloc(size * sizeof(char));
 	if (!str_cpy)
 		return (NULL);
 	while (*s)
 		*str_cpy++ = *s++;
-	*str_cpy = '\0';
+	*str_cpy++ = '\0';
 	return (str_cpy - size);
 }
 /*
