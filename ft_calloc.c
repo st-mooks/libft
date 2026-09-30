@@ -6,11 +6,15 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:35:43 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 09:05:21 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 13:25:58 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//ft_memset can be substituted with a static function here
+//ft_bzero can be substituted with  a static function here
+//Total number of functions (including above): 4
 
 static int	valid_params(size_t nmemb, size_t size)
 {

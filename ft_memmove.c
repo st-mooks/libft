@@ -6,11 +6,14 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 14:38:21 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/23 11:12:10 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 14:28:12 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//ft_memcpy can be substituted with  a static function here
+//Total number of functions (including above): 2
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -38,10 +41,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 /*
 int	main(void)
 {
-	char	str[] = "Hello";
+	char	str[] = "This text will overlap";
 
-	printf("Before:\ndest:%s\nsrc:%s\n", str, str + 5);
-	ft_memmove(str, str + 5, 4);
-	printf("After:\ndest:%s\nsrc:%s\n", str, str + 5);
+	printf("Before:\ndest:%s\nsrc:%s\n", str, str + 6);
+	ft_memmove(str, str + 6, ft_strlen(str));
+	printf("After:\ndest:%s\nsrc:%s\n", str, str + 6);
 	return (0);
 }*/

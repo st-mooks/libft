@@ -6,11 +6,14 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 10:44:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 13:30:06 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:47:11 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//ft_strlen can be substituted with a static function here
+//Total number of functions (including above): 2
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -39,12 +42,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	return (NULL);
 }
 /*
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	const char	*big = "big text";
-	const char	*little = "text";
-	size_t		len = SIZE_MAX;
+	const char	*big;
+	const char	*little;
+	size_t		len;
 
+	if (argc != 4)
+	{
+		printf("INVALID INPUT.\nVALID INPUT NO.: 3. I.E.: CHAR * CHAR * SIZE_T"
+				"\nEXITNG\n");
+		exit(EXIT_FAILURE);
+	}
+	big = argv[1];
+	little = argv[2];
+	len = (size_t)ft_atoi(argv[3]);
 	printf("ft_strnstr:\nbig = %s\nlittle = %s\nlen = %zu\nreturn = %p"
 			"\n",big, little, len, ft_strnstr(big, little, len));
 	printf("****\nstrnstr:\nbig = %s\nlittle = %s\nlen = %zu\nreturn = %p"

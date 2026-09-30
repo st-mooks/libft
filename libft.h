@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 12:37:50 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 12:22:14 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 15:38:18 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -69,8 +69,7 @@ char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
-//Prototypes for helper functions for testing
-//by the assignment
-/*t_list			*ft_init_node(void *content);
-void			ft_free_content(void *content);*/
+//Following prototypes for helper functions for testing purposes only
+t_list			*ft_init_node(void *content);
+void			ft_free_content(void *content);
 #endif

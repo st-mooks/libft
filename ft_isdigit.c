@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 14:06:17 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 10:36:51 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 13:48:37 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,14 @@ int	main(int argc, char *argv[])
 		printf("INVALID/EMPTY INPUT. EXITING\n");
 		exit(EXIT_FAILURE);
 	}
-	c = ft_atoi(argv[1]);
+	if (ft_strlen(argv[1]) > 1)
+		c = ft_atoi(argv[1]);
+	else
+		c = argv[1][0];
 	printf("%c is ", c);
 	if (!ft_isdigit(c))
 		printf("not ");
 	printf("a digit!\n");
+	printf("isdigit says: %d", isdigit(c));
 	return (0);
 }*/

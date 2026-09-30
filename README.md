@@ -28,7 +28,6 @@ manual pages for each implemented function (if available).
 | ft_strnstr | char *ft_strnstr(char *big, char *little, size_t len) | char * | Finds the first occurance of the string *little* in the string *big* and returns a pointer to that location, or (NULL) if none found. |
 | ft_strdup | char *ft_strdup(const char *s) | char * | Creates a copy of *s* and returns its location in memory. |
 | ft_split | char **ft_split(const char *s, char c) | char **: List of split words | Splits *s* using the delimeter *c* and returns a list of the individual sub-strings. |
-| ft_flip_case | void ft_flip_case(void *content) | N/A | Changes lower case letters of the English alphabet found in *content* into uppercase and vice versa. (Used as an example function with ft_lstiter). |
 | ft_strjoin | char *ft_strjoin(const char *s1, const char *s2) | char *: Pointer to the joined string | Joins two strings (*s1* and *s2*) and retuns the location of the resulting string in memory. |
 | ft_strncmp | int ft_strncmp(const char *s1, const char *s2, size_t n) | int: 0 if the strings are identical, the difference between the first differing characters otherwise | Compares two strings (*s1* and *s2*) up to the *n*th character. Returns (0) if the strings are identical, and the difference between the first differing characters otherwise. |
 | ft_strtrim | char *ft_strtrim(const char *s1, const char *set) | char * | Trims the any occurances of a character contained in *set* from the start and end of *s1*. The search stops when a character outside *set* is encountered. |
@@ -48,6 +47,7 @@ manual pages for each implemented function (if available).
 | ft_memmove | void *ft_memmove(void *dest, const void *src, size_t n) | void * | Copies *n* bytes from buffer *src* into buffer *dest*. Checks for overlapping and adjusts copying direction to avoid overwriting the *src* before copying it. |
 | ft_lstnew | t_list *ft_lstnew(void *content) | t_list * | Creates a new t_list node and sets its content to *content*. |
 | ft_init_node | t_list *ft_init_node(void *str) | t_list * | Copies string *str* into a new memory location and reates a new t_list node and sets its content to *str* (*str* is always assumed to be a string. Used to simplify creating nodes during testing). |
+| ft_free_content | void ft_free_content(void \*content) | N/A | Frees *contnet* pointer. (Used in testing as a function pointer to be passed as an argument.) |
 | ft_lstsize | unisgned int ft_lst_size(t_list *lst) | unsigned int: Number of nodes | Returns the total number of nodes in a t_list starting at *lst*. |
 | ft_lstlast | t_list *ft_lstlast(t_list *lst) | t_list: Last element | Returns the last element of a t_list *lst*. |
 | ft_lstadd_front | void ft_lstadd_front(t_list **lst, t_list new) | N/A | Adds a new node *node* at the start of t_list *lst*. (Compare to ft_lstadd_back below). |

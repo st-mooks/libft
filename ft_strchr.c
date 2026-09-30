@@ -6,11 +6,14 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 09:16:57 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 13:27:40 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 13:07:54 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//ft_strlen can be substituted with a static function here
+//Total number of functions (including above): 2
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -37,8 +40,13 @@ int	main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	s = argv[1];
-	c = atoi(argv[2]);
-	printf("ft_strchr:\ns = %s c = %c\nreturn = %p\n", s, c, ft_strchr(s, c));
-	printf("****\nstrchr:\ns = %s c = %c\nreturn = %p\n", s, c, strchr(s, c));
+	if (ft_strlen(argv[2]) > 1)
+		c = atoi(argv[2]);
+	else
+		c = argv[2][0];
+	printf("ft_strchr:\ns=\"%s\" c=\'%c\'\nreturn = %p\n"
+			"", s, c, ft_strchr(s, c));
+	printf("****\nstrchr:\ns=\"%s\" c=\'%c\'\nreturn = %p\n"
+			"", s, c, strchr(s, c));
 	return (0);
 }*/

@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 12:07:10 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 12:21:24 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 15:47:57 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 	f(lst->content);
 }
-/*
+
 static void	flip_case(void *content)
 {
 	char	*str;
@@ -40,6 +40,7 @@ static void	flip_case(void *content)
 		str++;
 	}
 }
+/*
 int	main(void)
 {
 	t_list	*lst1;

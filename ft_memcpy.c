@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 15:02:29 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/22 17:02:50 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 14:13:58 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 /*
 int	main(void)
 {
-	char	str[] = "Copy this text";
+	char	src[] = "Copy from this";
+	char	dest[25] = "Over this";
 	
-	printf("Before:\ndest = %s\nsrc = %s\n", str + 6, str);
-	ft_memcpy(str + 6, str, ft_strlen(str) + 1);
-	printf("After:\ndest = %s\nsrc = %s\n", str + 6, str);
+	printf("Before:\ndest = %s (at: %p)\nsrc = %s (at: %p)\n"
+		"", dest, dest, src, src);
+	ft_memcpy(dest, src, 8);
+	printf("After:\ndest = %s (at: %p)\nsrc = %s (at: %p)\n"
+		"", dest, dest, src, src);
 }*/

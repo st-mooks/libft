@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:36:05 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 09:06:53 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 13:09:05 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,13 +92,15 @@ char	*ft_itoa(int n)
 int	main(int argc, char *argv[])
 {
 	char	*str;
+	int		n;
 
 	if (argc != 2)
 		{
 			printf("INVALID/EMPTY INPUT. EXITING\n");
 			exit(EXIT_FAILURE);
 		}
-	str = ft_itoa(ft_atoi(argv[1]));
-	printf("n=%s\nstr=%s\nft_strlen(str)=%zu\n", argv[1], str, ft_strlen(str));
+	n = ft_atoi(argv[1]);
+	str = ft_itoa(n);
+	printf("n=%d\nstr=%s\nft_strlen(str)=%zu\n", n, str, ft_strlen(str));
 	return (0);
 }*/

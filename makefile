@@ -5,7 +5,7 @@ SOURCES:= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.
 HEADER:= libft.h
 OBJECTS:= ${SOURCES:.c=.o}
 all: ${NAME}
-%.o: %.c ${HEADER}
+%.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 ${NAME}: ${OBJECTS}
 	ar r $@ $^

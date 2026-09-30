@@ -6,11 +6,15 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 11:15:03 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 13:31:26 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 12:57:42 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//ft_strlen can be substituted with a static function here
+//ft_strlcpy can be substituted with a static function here
+//Total number of functions (including above): 3
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -21,9 +25,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = ft_strlen(s);
 	if (start + len <= s_len)
 		alloc_size = len + 1;
-	else
+	else if (start < s_len)
 		alloc_size = s_len - start + 1;
-	sub_s = malloc(alloc_size);
+	else
+		alloc_size = 0;
+	sub_s = malloc(alloc_size * sizeof(char));
 	if (!sub_s)
 		return (NULL);
 	s += start;
@@ -33,20 +39,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*
 int	main(int argc, char *argv[])
 {
-	const char		*s = "This is a string";
+	const char		*s;
 	char			*sub_s;
 	unsigned int	start;
 	size_t			len;
 
-	if (argc != 3)
+	if (argc != 4)
 	{
-		printf("INVALID INPUT.\nEXITING\n");
+		printf("INVALID INPUT.\nVALID INPUT NO.:2. I.E.: CHAR *, UNSIGNED INT"
+				", SIZE_T\nEXITING\n");
 		exit(EXIT_FAILURE);
 	}
-	start = ft_atoi(argv[1]);
-	len = ft_atoi(argv[2]);
+	s = argv[1];
+	start = ft_atoi(argv[2]);
+	len = (size_t)ft_atoi(argv[3]);
 	sub_s = ft_substr(s, start, len);
-	printf("s=%s\nstart=%u, len=%zu\nsub_s=%s\n", s, start, len, sub_s);
+	printf("s=\"%s\"\nstart=%u, len=%zu\nsub_s=\"%s\"\n", s, start, len, sub_s);
 	free(sub_s);
+	printf("sub_s freed successfully\n");
 	return (0);
 }*/

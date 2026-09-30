@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 14:56:29 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 13:24:34 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:31:21 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,14 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+/*
+int	main(int argc, char *argv[])
+{
+	if (argc != 2)
+	{
+		printf("INVALID INPUT. EXITING\n");
+		exit(EXIT_FAILURE);
+	}
+	printf("string=\"%s\"\nft_strlen=%zu\n", argv[1], ft_strlen(argv[1]));
+	printf("strlen=%zu\n", strlen(argv[1]));
+}*/

@@ -6,11 +6,14 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 10:50:00 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/27 11:53:04 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:33:50 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//ft_strlen can be substituted with a static function here
+//Total number of functions (including above): 2
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -29,7 +32,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 /*
-char	capitalise(unsigned int i, char c)
+static char	capitalise(unsigned int i, char c)
 {
 	(void)i;
 
@@ -50,5 +53,7 @@ int	main(int argc, char *argv[])
 	str = ft_strmapi(argv[1], capitalise);
 	printf("original str=%s\nfuntction to apply=capitalise\n"
 			"result str=%s\n", argv[1], str);
+	free(str);
+	printf("str freed successfully");
 	return (0);
 }*/

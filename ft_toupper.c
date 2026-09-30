@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 09:11:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 10:40:50 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 13:02:01 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ int	main(int argc, char *argv[])
 		printf("INVALID/EMPTY INPUT. EXITING\n");
 		exit(EXIT_FAILURE);
 	}
-	c = ft_atoi(argv[1]);
+	if (ft_strlen(argv[1]) > 1)
+		c = ft_atoi(argv[1]);
+	else
+		c = (int)argv[1][0];
 	printf("ft_toupper(%c) = %c\n", c, ft_toupper(c));
+	printf("toupper(%c) = %c\n", c, toupper(c));
 	return (0);
 }*/

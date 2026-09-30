@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 09:16:57 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/28 20:06:56 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 14:03:49 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 int	main(void)
 {
 	const void	*s = "Can you find the hidden char?";
-	int		c = (int)'?';
-	size_t	n = INT_MIN;
+	int			c = (int)'?';
+	size_t		n = INT_MIN;
 
 	printf("ft_memchr:\ns = %s c = %c\nreturn = %p\n"
 			"", (char *)s, c, ft_memchr(s, c, n));

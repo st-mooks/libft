@@ -6,13 +6,13 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 13:03:41 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 09:14:33 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 13:06:41 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	char	pre_c;
 	size_t	count;
@@ -23,71 +23,59 @@ static size_t	count_words(char const *s, char c)
 	{
 		if (*s != c && pre_c == c)
 			count++;
-		pre_c = *s;
-		s++;
+		pre_c = *s++;
 	}
 	return (count);
 }
 
-static char	*next_word(char const *s, char c)
+static void	fill_str(const char *origin, char *s, char c)
 {
-	long	word_len;
-	char	*word;
-	long	i;
-
-	word_len = ft_strchr(s, c) - s;
-	if (word_len < 0)
-		word_len = ft_strlen(s);
-	word = malloc(word_len * sizeof(char));
-	if (!word)
-		return (NULL);
-	i = 0;
-	while (i < word_len)
-	{
-		word[i] = s[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
+	while (*origin && *origin != c)
+		*s++ = *origin++;
+	*s = '\0';
 }
 
-static char	*make_set(char c)
+static size_t	next(const char *s, char c)
 {
-	char	*set;
+	size_t	len;
 
-	set = malloc(2 * sizeof(char));
-	set[0] = c;
-	set[1] = '\0';
-	return (set);
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
 }
 
-char	**ft_split(char const *s, char c)
+static void	strip(const char **s, char c)
 {
-	char	*set;
-	size_t	word_count;
-	char	*s_cpy;
-	char	**split_s;
-	size_t	i;
+	while (**s && **s == c)
+		*s += 1;
+}
 
-	set = make_set(c);
+char	**ft_split(const char *s, char c)
+{
+	int		word_count;
+	char	**split;
+	int		i;
+	size_t	word_len;
+
 	word_count = count_words(s, c);
-	s_cpy = (char *)s;
-	split_s = malloc((word_count + 1) * sizeof(char *));
-	if (!split_s)
+	split = malloc((word_count + 1) * sizeof(char *));
+	if (!split)
 		return (NULL);
 	i = 0;
 	while (i < word_count)
 	{
-		s_cpy = ft_strtrim(s_cpy, set);
-		split_s[i] = next_word(s_cpy, c);
-		if (!split_s[i])
+		strip(&s, c);
+		word_len = next(s, c);
+		split[i] = malloc((word_len + 1) * sizeof(char));
+		if (!split[i])
 			return (NULL);
-		s_cpy += ft_strlen((char *)split_s[i]);
+		fill_str(s, split[i], c);
+		s += word_len;
 		i++;
 	}
-	split_s[i] = NULL;
-	free(set);
-	return (split_s);
+	split[i] = NULL;
+	return (split);
 }
 /*
 int	main(int argc, char *argv[])
@@ -99,7 +87,7 @@ int	main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		printf("INVALID INPUTS.\nEXITING\n");
+		printf("INVALID INPUTS. EXITING\n");
 		exit(EXIT_FAILURE);
 	}
 	s = argv[1];

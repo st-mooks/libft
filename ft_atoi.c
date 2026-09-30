@@ -6,11 +6,14 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:12:00 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 09:04:45 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 13:12:17 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//ft_isdigit can be substituted with a static function here
+//Total number of functions (including above): 3
 
 static int	ft_isspace(char c)
 {

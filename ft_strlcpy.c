@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 18:55:43 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 13:29:14 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 10:25:17 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (ft_strlen(src));
 }
 /*
-#include <bsd/string.h>
 int	main()
 {
 	char	dst[] = "dst to be replaced";

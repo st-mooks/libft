@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 09:48:13 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/23 10:43:16 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 14:06:14 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(void)
 {
 	const void	*s1 = "What is the difference?";
 	const void	*s2 = "What is the difference? Here it is!";
-	size_t		n = 15;
+	size_t		n = 25;
 	
 	printf("ft_memcmp:\ns1 = %s\ns2 = %s\nn = %zu\nreturn = "
 			"%d", (char *)s1, (char *)s2, n, ft_memcmp(s1, s2, n));

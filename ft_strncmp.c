@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 09:48:13 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/23 10:11:20 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 11:39:08 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,13 @@ int	main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("INVALID/EMPTY INPUT. EXITING\n");
+		printf("INVALID/EMPTY INPUT.\nVALID INPUT NUM 3."
+				"I.E. CHAR * CHAR * SIZE_T\nEXITING\n");
 		exit(EXIT_FAILURE);
 	}
 	s1 = argv[1];
 	s2 = argv[2];
-	n = (size_t)atoi(argv[3]);
+	n = (size_t)ft_atoi(argv[3]);
 	printf("ft_strncmp:\ns1 = %s\ns2 = %s\nn = %zu\nreturn = "
 			"%d", s1, s2, n, ft_strncmp(s1, s2, n));
 	printf("\n****\nstrncmp:\ns1 = %s\ns2 = %s\nn = %zu\nreturn = "

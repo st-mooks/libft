@@ -6,11 +6,16 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 12:01:16 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 13:28:18 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 10:21:19 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//ft_strlen can be substituted with a static function here
+//ft_strlcpy can be substituted with a static function here
+//ft_strlcat can be substituted with a static function here
+//Total number of functions (including above): 4
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -34,5 +39,7 @@ int	main(void)
 
 	s3 = ft_strjoin(s1, s2);
 	printf("s1=%s\ns2=%s\ns3=%s\n", s1, s2, s3);
+	free(s3);
+	printf("s3 freed successfully");
 	return (0);
 }*/

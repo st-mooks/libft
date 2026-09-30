@@ -6,11 +6,14 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 12:34:07 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/24 11:13:21 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/29 13:25:36 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+//ft_memset can be substituted with a static function here
+//Total number of functions (including above): 2
 
 void	*ft_bzero(void *s, size_t n)
 {
