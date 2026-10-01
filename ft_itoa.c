@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:36:05 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/01 11:44:25 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/01 12:39:36 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ static void	fill_str(char *str, int n, int digits)
 	}
 	base = "0123456789";
 	if (l == 0)
-		*str = 0;
+		*str = '0';
 	while (l > 0)
 	{
-		str[digits--] = base[l % 10];
+		str[digits - 1] = base[l % 10];
 		l /= 10;
+		digits--;
 	}
 }
 
@@ -38,13 +39,15 @@ static int	count_digits(int n)
 	int		digits;
 	long	l;
 
+	digits = 0;
 	l = (long)n;
 	if (l < 0)
 	{
 		l *= -1;
 		digits++;
 	}
-	digits = 0;
+	if (l == 0)
+		digits++;
 	while (l > 0)
 	{
 		digits++;
@@ -66,7 +69,7 @@ char	*ft_itoa(int n)
 	str[digits] = '\0';
 	return (str);
 }
-
+/*
 int	main(int argc, char *argv[])
 {
 	char	*str;
@@ -82,4 +85,4 @@ int	main(int argc, char *argv[])
 	str = ft_itoa(n);
 	printf("n=%d\nstr=%s\nft_strlen(str)=%zu\n", n, str, ft_strlen(str));
 	return (0);
-}
+}*/
