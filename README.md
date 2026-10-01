@@ -1,7 +1,7 @@
-# LIBFT
-## A 42 Amman project
-
 *This project has been created as part of the 42 curriculum by mbadarin*
+#LIBFT
+##A 42 Amman Porject
+
 ### Description
 A library conatinig my impliminations of several functions that do string, memory, and linked list manipulation.
 ### Instructions

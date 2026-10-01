@@ -6,67 +6,89 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:36:05 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/01 11:44:25 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/09/30 13:09:05 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	fill_str(char *str, int n, int digits)
+static long	abs_val(int n)
 {
-	char	*base;
 	long	l;
 
-	l = (long) n;
+	l = n;
 	if (l < 0)
-	{
 		l *= -1;
-		*str = '-';
-	}
-	base = "0123456789";
-	if (l == 0)
-		*str = 0;
-	while (l > 0)
-	{
-		str[digits--] = base[l % 10];
-		l /= 10;
-	}
+	return (l);
 }
 
-static int	count_digits(int n)
+static void	flip_str(char *str, int len)
 {
-	int		digits;
+	int		i;
+	int		n;
+	char	*str_flipped;
+
+	str_flipped = malloc((len) * sizeof(char));
+	i = 0;
+	n = 0;
+	if (str[i] == '-')
+		str_flipped[n++] = '-';
+	while (str[i])
+	{
+		str_flipped[n++] = str[len - i - 1];
+		i++;
+	}
+	i = 0;
+	while (str[i])
+	{
+		str[i] = str_flipped[i];
+		i++;
+	}
+	free(str_flipped);
+}
+
+static void	parse_positive(long n, char *str, int start_idx)
+{
+	int		i;
+	char	*base;
+
+	base = "0123456789";
+	i = start_idx;
+	if (n == 0)
+		str[i++] = '0';
+	while (n > 0)
+	{
+		*(str + i) = base[n % 10];
+		n /= 10;
+		i++;
+	}
+	*(str + i) = '\0';
+	flip_str(str, i);
+}
+
+static void	parse_negative(int n, char *str)
+{
 	long	l;
 
-	l = (long)n;
-	if (l < 0)
-	{
-		l *= -1;
-		digits++;
-	}
-	digits = 0;
-	while (l > 0)
-	{
-		digits++;
-		l /= 10;
-	}
-	return(digits);
+	l = abs_val(n);
+	*str = '-';
+	parse_positive(l, str, 1);
 }
 
 char	*ft_itoa(int n)
 {
-	int		digits;
 	char	*str;
 
-	digits = count_digits(n);
-	str = malloc((digits + 1) * sizeof(char));
+	str = malloc(12 * sizeof(char));
 	if (!str)
 		return (NULL);
-	fill_str(str, n, digits);
-	str[digits] = '\0';
+	else if (n >= 0)
+		parse_positive((long)n, str, 0);
+	else
+		parse_negative(n, str);
 	return (str);
 }
-
+/*
 int	main(int argc, char *argv[])
 {
 	char	*str;
@@ -77,9 +99,8 @@ int	main(int argc, char *argv[])
 			printf("INVALID/EMPTY INPUT. EXITING\n");
 			exit(EXIT_FAILURE);
 		}
-
 	n = ft_atoi(argv[1]);
 	str = ft_itoa(n);
 	printf("n=%d\nstr=%s\nft_strlen(str)=%zu\n", n, str, ft_strlen(str));
 	return (0);
-}
+}*/
