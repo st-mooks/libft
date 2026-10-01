@@ -70,7 +70,7 @@ strnstr: ft_strnstr.c ft_strlen.c ${ATOI}
 	${CC} ${CFLAGS} $^ -o $@ -lbsd
 strrchr: ft_strrchr.c ft_strlen.c ${ATOI}
 	${CC} ${CFLAGS} $^ -o $@
-strtrim: ft_strtrim.c ft_strlen.c
+strtrim: ft_strtrim.c ft_strlen.c ft_strlcpy.c
 	${CC} ${CFLAGS} $^ -o $@
 substr: ft_substr.c ft_strlen.c ft_strlcpy.c ${ATOI}
 	${CC} ${CFLAGS} $^ -o $@

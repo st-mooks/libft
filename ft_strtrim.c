@@ -6,14 +6,15 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 12:13:39 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/30 12:31:25 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/01 13:07:28 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 //ft_strlen can be substituted with a static function here
-//Total number of functions (including above): 5
+//ft_strlcpy can be substituted with a static function here
+//Total number of functions (including above): 3
 
 static int	char_in_set(const char *set, char c)
 {
@@ -23,56 +24,27 @@ static int	char_in_set(const char *set, char c)
 	return (0);
 }
 
-static char	*trim_start(const char *s, const char *c)
-{
-	char	*trim_s;
-	int		i;
-
-	while (char_in_set(c, *s))
-		s++;
-	i = 0;
-	while (s[i])
-	{
-		i++;
-	}
-	trim_s = malloc((i + 1) * sizeof(char));
-	if (!trim_s)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		trim_s[i] = s[i];
-		i++;
-	}
-	trim_s[i] = '\0';
-	return (trim_s);
-}
-
-static void	trim_end(char *s, const char *set)
-{
-	size_t	i;
-
-	i = ft_strlen(s);
-	while (i > 0)
-	{
-		if (char_in_set(set, s[i - 1]))
-		{
-			s[i - 1] = '\0';
-			i--;
-		}
-		else
-			break ;
-	}
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	int		start;
+	int		end;
+	char	*ptr;
 	char	*trim_s;
+	int		size;
 
-	trim_s = trim_start(s1, set);
+	ptr = (char *)s1;
+	while (char_in_set(set, *ptr))
+		ptr++;
+	start = ptr - s1;
+	ptr = (char *)s1 + ft_strlen(s1) - 1;
+	while (char_in_set(set, *ptr))
+		ptr--;
+	end = ptr - s1 + 1;
+	size = end - start + 1;
+	trim_s = malloc((size) * sizeof(char));
 	if (!trim_s)
 		return (NULL);
-	trim_end(trim_s, set);
+	ft_strlcpy(trim_s, s1 + start, size);
 	return (trim_s);
 }
 /*
