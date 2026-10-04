@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:36:05 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/01 12:39:36 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/04 12:13:52 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int	count_digits(int n)
 		digits++;
 		l /= 10;
 	}
-	return(digits);
+	return (digits);
 }
 
 char	*ft_itoa(int n)
