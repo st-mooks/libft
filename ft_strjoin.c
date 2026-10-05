@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 12:01:16 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/30 10:21:19 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 12:22:58 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	alloc_size;
 	char	*join_s;
 
+	if (!s1 || !s2)
+		return (NULL);
 	alloc_size = ft_strlen(s1) + ft_strlen(s2) + 1;
 	join_s = malloc(alloc_size);
 	if (!join_s)

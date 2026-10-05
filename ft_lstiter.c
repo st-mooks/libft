@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 12:07:10 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/04 10:13:18 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 11:11:44 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (!lst || !f)
+		return ;
 	while (lst->next)
 	{
 		f(lst->content);

@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 09:16:57 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 14:03:49 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 11:27:19 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*s_cpy;
-	size_t	i;
+	unsigned char	*s_cpy;
+	size_t			i;
 
-	s_cpy = (char *)s;
+	if (!s)
+		return (NULL);
+	s_cpy = (unsigned char *)s;
 	c = (unsigned char)c;
 	i = 0;
 	while (i < n)

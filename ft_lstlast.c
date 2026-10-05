@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:27:23 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 12:01:35 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 10:52:47 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (NULL);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);

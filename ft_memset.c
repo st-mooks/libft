@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 11:42:44 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 14:33:58 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 11:43:21 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char	*s_copy;
-	size_t	i;
+	unsigned char	*s_copy;
+	size_t			i;
 
-	s_copy = s;
+	if (!s)
+		return (NULL);
+	s_copy = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{

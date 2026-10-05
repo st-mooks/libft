@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:12:00 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/30 13:12:17 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 10:51:25 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_atoi(const char *nptr)
 	int		sum;
 	int		sign;
 
+	if (!nptr)
+		return (0);
 	sum = 0;
 	sign = 1;
 	while (ft_isspace(*nptr))

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 09:27:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/30 10:14:00 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 12:17:45 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strdup(const char *s)
 	size_t	size;
 	char	*str_cpy;
 
+	if (!s)
+		return (NULL);
 	size = ft_strlen(s) + 1;
 	str_cpy = malloc(size * sizeof(char));
 	if (!str_cpy)
@@ -37,9 +39,9 @@ int	main(void)
 	char	*str_cpy;
 
 	ft_str_cpy = ft_strdup(str);
-	str_cpy = strdup(str);
 	printf("ft_strdup:\nstr = %s\nmemory location = %p\nstr_cpy = %s\n"
 			"memory location = %p\n", str, str, ft_str_cpy, ft_str_cpy);
+	str_cpy = strdup(str);
 	printf("ft_strdup:\nstr = %s\nmemory location = %p\nstr_cpy = %s\n"
 			"memory location = %p\n", str, str, str_cpy, str_cpy);
 	free(ft_str_cpy);

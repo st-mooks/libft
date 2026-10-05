@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 19:20:18 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/30 11:26:19 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 12:40:50 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dst_size;
 	size_t	src_size;
 
+	if (!dst || !src)
+		return (0);
 	i = 0;
 	dst_size = ft_strlen(dst);
 	src_size = ft_strlen(src);

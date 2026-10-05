@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 12:37:50 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/01 14:25:53 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 12:42:30 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -16,6 +16,12 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+/*//Includes for testing purposes only
+# include <stdio.h>
+# include <ctype.h>
+# include <limits.h>
+# include <string.h>
+# include <bsd/string.h>*/
 
 typedef struct s_list
 {

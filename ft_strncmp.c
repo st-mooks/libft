@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 09:48:13 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/30 11:39:08 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 12:35:25 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	if (!s1)
+	{
+		if (!s2)
+			return (0);
+		return (-1);
+	}
+	if (!s2)
+		return (1);
 	i = 0;
 	while ((s1[i] || s2[i]) && i < n)
 	{
@@ -39,7 +47,7 @@ int	main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	s1 = argv[1];
-	s2 = argv[2];
+	s2 = argv[2]; 
 	n = (size_t)ft_atoi(argv[3]);
 	printf("ft_strncmp:\ns1 = %s\ns2 = %s\nn = %zu\nreturn = "
 			"%d", s1, s2, n, ft_strncmp(s1, s2, n));

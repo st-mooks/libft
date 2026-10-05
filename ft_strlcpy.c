@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 18:55:43 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/30 10:25:17 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 12:40:40 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 
+	if (!dst || !src)
+		return (0);
 	if (size > 0)
 	{
 		i = 0;

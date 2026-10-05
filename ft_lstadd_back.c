@@ -6,17 +6,23 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:38:31 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 10:21:46 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 11:22:35 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//ft_lstlast can be substituted with a static function here
+//Total number of functions (including above): 2
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while ((*lst)->next)
-		*lst = (*lst)->next;
-	(*lst)->next = new;
+	t_list	*last;
+
+	if (!lst || !new)
+		return ;
+	last = ft_lstlast(*lst);
+	last->next = new;
 }
 /*
 int	main(void)

@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   launch_test.c                                      :+:      :+:    :+:   */
+/*   ft_free_content.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
+/*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/03 12:59:58 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/04 12:21:38 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/29 09:44:52 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/10/05 11:15:40 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libtest.h"
+#include "libft.h"
 
-#include "testcases.h"
-
-void	launch_tests(char *test_func)
+void	ft_free_content(void *content)
 {
-	void	*actual;
-	int		actual_size;
+	free(content);
 }

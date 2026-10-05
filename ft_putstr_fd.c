@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 12:32:04 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/27 12:38:44 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 11:45:32 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	while (*s)
 		ft_putchar_fd(*s++, fd);
 }

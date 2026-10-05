@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 15:36:05 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/04 12:13:52 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 09:19:19 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static void	fill_str(char *str, int n, int digits)
 {
-	char	*base;
-	long	l;
+	char		*base;
+	long long	l;
 
-	l = (long) n;
+	l = (long long) n;
 	if (l < 0)
 	{
 		l *= -1;
@@ -36,11 +36,11 @@ static void	fill_str(char *str, int n, int digits)
 
 static int	count_digits(int n)
 {
-	int		digits;
-	long	l;
+	int			digits;
+	long long	l;
 
 	digits = 0;
-	l = (long)n;
+	l = (long long)n;
 	if (l < 0)
 	{
 		l *= -1;

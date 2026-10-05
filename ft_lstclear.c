@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 15:18:01 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 10:58:05 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 11:12:46 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next;
 
+	if (!lst || !del)
+		return ;
 	while ((*lst)->next)
 	{
 		next = (*lst)->next;

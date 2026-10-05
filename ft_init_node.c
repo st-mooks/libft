@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   launch_test.c                                      :+:      :+:    :+:   */
+/*   ft_init_node.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/03 12:59:58 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/04 12:21:38 by mbadarin         ###   ########.fr       */
+/*   Created: 2026/09/28 11:46:08 by mbadarin          #+#    #+#             */
+/*   Updated: 2026/10/05 11:15:16 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libtest.h"
+#include "libft.h"
 
-#include "testcases.h"
-
-void	launch_tests(char *test_func)
+t_list	*ft_init_node(void *str)
 {
-	void	*actual;
-	int		actual_size;
+	t_list	*lst;
+	char	*content;
+
+	content = ft_strdup((const char *)str);
+	if (!content)
+		return (NULL);
+	lst = ft_lstnew(content);
+	return (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:15:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/29 12:20:59 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 11:26:35 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ unsigned int	ft_lstsize(t_list *lst)
 {
 	unsigned int	size;
 
+	if (!lst)
+		return (0);
 	size = 1;
 	while (lst->next)
 	{

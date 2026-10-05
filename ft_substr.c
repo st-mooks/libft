@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 11:15:03 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/30 12:57:42 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 12:39:09 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	s_len;
 	size_t	alloc_size;
 
+	if (!s)
+		return (NULL);
 	s_len = ft_strlen(s);
 	if (start + len <= s_len)
 		alloc_size = len + 1;

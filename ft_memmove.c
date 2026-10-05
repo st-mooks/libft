@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 14:38:21 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/03 12:19:02 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 11:39:09 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,17 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
+	size_t	offset;
 
+	if (!dest || !src)
+		return (NULL);
 	if ((uintptr_t)dest > (uintptr_t)src)
 	{
 		i = 0;
 		while (i < n)
 		{
-			*((char *)dest + n - i - 1) = *((char *)src + n - i - 1);
+			offset = n - i - 1;
+			*((char *)dest + offset) = *((char *)src + offset);
 			i++;
 		}
 	}
@@ -36,14 +40,16 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 /*
 int	main(void)
 {
-	char	*str;
-	char	*str2;
+	char	*dest;
+	char	*src;
+	char	*dest_return;
 
-	str = malloc(sizeof("This text will overlap"));
-	str2 = malloc(sizeof("This text will overlap"));
-	str = ft_strdup("This text will overlap");
-	printf("After:\ndest:%s\nsrc:%s\n", str2, str);
-	ft_memmove(str2, str, ft_strlen(str));
-	printf("After:\ndest:%s\nsrc:%s\n", str2, str);
+	src = ft_strdup("Copy this text");
+	dest = src + 4;
+	printf("After:\ndest:\"%s\"\nsrc:\"%s\"\n", dest, src);
+	dest_return = ft_memmove(dest, src, ft_strlen(src) - 4);
+	printf("After:\ndest:\"%s\"\nsrc:\"%s\"\n", dest, src);
+	printf("dest_return:\"%s\"\n", dest_return);
+	free(src);
 	return (0);
 }*/

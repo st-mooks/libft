@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 13:03:41 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/01 11:17:47 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 12:12:27 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	count_words(char const *s, char c)
 	char	pre_c;
 	size_t	count;
 
+	if (!s)
+		return (0);
 	pre_c = c;
 	count = 0;
 	while (*s)
@@ -95,7 +97,7 @@ int	main(int argc, char *argv[])
 		printf("INVALID INPUTS. EXITING\n");
 		exit(EXIT_FAILURE);
 	}
-	s = argv[1];
+	s = argv[1]
 	c = argv[2][0];
 	split_s = ft_split(s, c);
 	if (split_s)

@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 09:16:57 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/30 13:07:54 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 12:14:53 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	c = (char)c;
+	if (!s)
+		return (NULL);
+	c = (unsigned char)c;
 	if (c == '\0')
 		return ((char *)s + ft_strlen(s));
 	while (*s)

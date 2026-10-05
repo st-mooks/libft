@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 09:16:57 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/09/30 13:07:27 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/05 12:38:47 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 	char	*s_cpy;
 
-	c = (char)c;
+	if (!s)
+		return (NULL);
+	c = (unsigned char)c;
 	s_cpy = (char *)s;
 	i = ft_strlen(s);
 	if (c == '\0')
