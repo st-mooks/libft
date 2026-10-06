@@ -10,8 +10,8 @@ all: ${NAME}
 ${NAME}: ${OBJECTS}
 	ar r $@ $^
 clean:
-	rm ${OBJECTS}
+	rm -f ${OBJECTS}
 fclean: clean
-	rm ${NAME}
+	rm -f ${NAME}
 re: fclean all
 .PHONY: all clean fclean re

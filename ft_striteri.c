@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 11:53:52 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 12:22:31 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 20:27:29 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
+/*
 void	capitalise(unsigned int i, char *s)
 {
 	(void) i;
 	if (*s >= 'a' && *s <= 'z')
 		*s -= 32;
 }
-/*
+
 int	main(int argc, char *argv[])
 {
 	if (argc != 2)

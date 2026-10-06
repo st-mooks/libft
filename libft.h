@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 12:37:50 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/06 16:39:51 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 20:26:09 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -17,11 +17,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 //Includes for testing purposes only
-# include <stdio.h>
+/*# include <stdio.h>
 # include <ctype.h>
 # include <limits.h>
 # include <string.h>
-# include <bsd/string.h>
+# include <bsd/string.h>*/
 
 typedef struct s_list
 {
@@ -30,7 +30,7 @@ typedef struct s_list
 }					t_list;
 
 int				ft_atoi(const char *nptr);
-void			*ft_bzero(void *s, size_t n);
+void			ft_bzero(void *s, size_t n);
 void			*ft_calloc(size_t nmemb, size_t size);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);

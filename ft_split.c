@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/05 13:10:21 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 13:10:26 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 20:27:09 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static size_t	next(const char **s, char c)
 	return (len);
 }
 
-void	free_all(char **split, int i)
+static void	free_all(char **split, int i)
 {
 	while (i >= 0)
 		free(split[i--]);

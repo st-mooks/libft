@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:49:16 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 11:17:17 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 21:51:07 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 {
 	t_list	*lst1;
 	
-	lst1 = ft_init_node("original");
-	ft_lstdelone(lst1, ft_free_content);
+	lst1 = ft_lstnew("original");
+	ft_lstdelone(lst1, free);
 	return (0);
 }*/

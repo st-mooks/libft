@@ -12,7 +12,7 @@ A library conatinig my impliminations of several functions that do string, memor
 
 Use the provided make file to create an archive containig the preprocessed o files.
 
-### Resoruces
+### Resources
 
 - Manual pages for each implemented function (if available).
 - [Geeksforgeeks.org](https://www.geeksforgeeks.org)
@@ -53,12 +53,12 @@ Use of AI was limited, and mainly used with explicit prompts such as *"I am a ne
 | ft_putstr_fd | void ft_putstr_fd(char *s, int fd) | N/A | Writes string *s* into file descriptior *fd*. |
 | ft_putnbr_fd | void ft_putnbr_fd(int n, int fd) | N/A | Writes integer *n* into file descriptor *fd*. |
 | ft_putendl_df | void ft_putendl_fd(char *s, int fd) | N/A | Writes string *s* into file descriptor *fd*, followed by a newline into the same *fd*. |
-| ft_memset | void ft_memset(void *s, int c, size_t n) | void* | Sets *n* bytes to *c* starting at address *s*. |
+| ft_memset | void *ft_memset(void *s, int c, size_t n) | void* | Sets *n* bytes to *c* starting at address *s*. |
 | ft_bzero | void ft_bzero(void *s, size_t n) | N/A | Sets *n* bytes to (0) starting at address *s*. |
-| ft_calloc | void *ft_calloc(size_t nmemb, size_t size) | void *: A pointer to the first member of the list | Allocates *nmemb* elements in memory, each with size *size*, and sets the value of each byte to (0). Returns a pointer to the address of the first member allocated. In case either *nmemb* or *size* is (0), returns (NULL). In case *nmemb* \* *size* would overflow the size_t limit, reutrns (NULL) as well. |
+| ft_calloc | void *ft_calloc(size_t nmemb, size_t size) | void *: A pointer to the first member of the list | Allocates *nmemb* elements in memory, each with size *size*, and sets the value of each byte to (0). Returns a pointer to the address of the first member allocated. In case either *nmemb* or *size* is (0), returns a freeable pointer. In case *nmemb* \* *size* would overflow the size_t limit, reutrns (NULL). |
 | ft_memchr | void *ft_memchar(void *s, int c, size_t n) | void * | Finds the first instance of character *c* starting at address *s*, looking upto *n* bytes, and returns a pointer to that location, or (NULL) if none found. (compare to ft_strchr above). |
 | ft_memcpy | void *ft_memcpy(void *dest, const void *src, size_t n) | void * | Copies *n* bytes from buffer *src* into buffer *dest*. Not safe in case of overlapping of buffers. |
-| ft_memcmp | int *ft_memcmp(void *s1, void *s2, sizt_t n) | int: 0 if the buffers are identical, the difference between the first differing bytes otherwise | Compares the first *n* bytes of buffer *s1* and buffer *s2*. Returns (0) if the buffers are identical, and the difference between the first differing bytes otherwise. |
+| ft_memcmp | int ft_memcmp(void *s1, void *s2, sizt_t n) | int: 0 if the buffers are identical, the difference between the first differing bytes otherwise | Compares the first *n* bytes of buffer *s1* and buffer *s2*. Returns (0) if the buffers are identical, and the difference between the first differing bytes otherwise. |
 | ft_memmove | void *ft_memmove(void *dest, const void *src, size_t n) | void * | Copies *n* bytes from buffer *src* into buffer *dest*. Checks for overlapping and adjusts copying direction to avoid overwriting the *src* before copying it. |
 | ft_lstnew | t_list *ft_lstnew(void *content) | t_list * | Creates a new t_list node and sets its content to *content*. |
 | ft_init_node | t_list *ft_init_node(void *str) | t_list * | Copies string *str* into a new memory location and reates a new t_list node and sets its content to *str* (*str* is always assumed to be a string. Used to simplify creating nodes during testing). |
@@ -69,5 +69,5 @@ Use of AI was limited, and mainly used with explicit prompts such as *"I am a ne
 | ft_lstadd_back | void ft_lstadd_back(t_list **lst, t_list new) | N/A | Adds a new node *node* at the end of t_list *lst*. (Compare to ft_lstadd_front above). |
 | ft_lstdelone | void ft_lstdelone(t_list \*lst, void (*del)(void *)) | N/A | Deletes one node *lst* only and uses function *del* to delete its content. |
 | ft_lstclear | void ft_lstclear(t_list \*\*lst, void (*del)(void *)) | N/A | Deletes node *lst* and all subsequent nodes, and uses function *del* to delete its contents. |
-| ft_lstiter | void ft_lstiter(t_list \*\*lst, void(*f)(void *)) | N/A | Iterates over every node in t_list *lst* and calls function *f* over the content of each node. |
+| ft_lstiter | void ft_lstiter(t_list \*lst, void(*f)(void *)) | N/A | Iterates over every node in t_list *lst* and calls function *f* over the content of each node. |
 | ft_lstmap | t_list *ft_lstmap(t_list \*lst, void \*(\*f)(void *), void (\*d)(void *)) | t_list | Iterates over t_list *lst*, calling function *f* over content of each node, which are used to create and return a new t_list. Function *d* is used to delete the contents of the newly created t_list if needed. |

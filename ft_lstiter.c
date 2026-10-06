@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 12:07:10 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 11:11:44 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 21:57:30 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,19 @@ int	main(void)
 {
 	t_list	*lst1;
 	t_list	*lst2;
+	char	*content;
 
-	lst1 = ft_init_node("1st Node");
-	lst2 = ft_init_node("2nd_nOdE");
+	content = ft_strdup("1st Node");
+	lst1 = ft_lstnew(content);
+	content = ft_strdup("2nd_nOdE");
+	lst2 = ft_lstnew(content);
 	ft_lstadd_back(&lst1, lst2);
 	printf("Before:\nlst1->content:%s\nlst2->content:%s"
 			"\n", (char *)lst1->content, (char *)lst2->content);
 	ft_lstiter(lst1, flip_case);
 	printf("After:\nlst1->content:%s\nlst2->content:%s"
 			"\n", (char *)lst1->content, (char *)lst2->content);
-	ft_lstclear(&lst2, ft_free_content);
+	ft_lstclear(&lst2, free);
+	free(content);
 	return (0);
 }*/

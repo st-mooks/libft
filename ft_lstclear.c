@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 15:18:01 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/06 18:31:38 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 21:50:43 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int	main(void)
 	t_list	*lst2;
 	t_list	*lst3;
 
-	lst1 = ft_init_node("original");
-	lst2 = ft_init_node("second");
-	lst3 = ft_init_node("newest");
+	lst1 = ft_lstnew("original");
+	lst2 = ft_lstnew("second");
+	lst3 = ft_lstnew("newest");
 	ft_lstadd_back(&lst1, lst2);
 	ft_lstadd_back(&lst2, lst3);
-	ft_lstclear(&lst1, ft_free_content);
+	ft_lstclear(&lst1, free);
 	return (0);
 }*/

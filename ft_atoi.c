@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:12:00 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 10:51:25 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 21:02:59 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static int	ft_isspace(char c)
 
 int	ft_atoi(const char *nptr)
 {
-	int		sum;
-	int		sign;
+	int			sum;
+	int			sign;
 
 	if (!nptr)
 		return (0);
@@ -35,11 +35,8 @@ int	ft_atoi(const char *nptr)
 	while (ft_isspace(*nptr))
 		nptr++;
 	if (*nptr == '-' || *nptr == '+')
-	{
-		if (*nptr == '-')
+		if (*nptr++ == '-')
 			sign *= -1;
-		nptr++;
-	}
 	while (*nptr)
 	{
 		if (!ft_isdigit(*nptr))

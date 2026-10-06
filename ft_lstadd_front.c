@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 13:50:20 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/06 18:44:24 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 21:50:00 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 int	main(void)
 {
 	t_list	*lst;
+	t_list	*second;
 	t_list	*new;
 
-	lst = ft_init_node("original");
-	new = ft_init_node("new");
-	printf("BEFORE:\nhead pointer=%p\nnew pointer=%p\n", lst, new);
+	lst = ft_lstnew("First");
+	second = ft_lstnew("Second");
+	new = ft_lstnew("Third");
+	printf("BEFORE:\nhead pointer=%p\nsecond pointer=%p\n", lst, second);
+	ft_lstadd_front(&lst, second);
+	printf("ADDING SECOND:\nhead pointer=%p\nsecond.next=%p\n", lst, second->next);
 	ft_lstadd_front(&lst, new);
 	printf ("AFTER:\nhead pointer=%p\nnew.next=%p\n", lst, new->next);
 	return (0);

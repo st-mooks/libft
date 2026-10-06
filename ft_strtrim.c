@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 12:13:39 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/06 18:36:27 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 20:44:43 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	s1 = argv[1];
-	set = argv[2] "bab\0";
+	set = argv[2];
 	s2 = ft_strtrim(s1, set);
 	printf("s1=\"%s\" set=\"%s\"\ns2=\"%s\"\n", s1, set, s2);
 	free(s2);

@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 12:34:07 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 10:48:54 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 20:26:27 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,9 @@
 //ft_memset can be substituted with a static function here
 //Total number of functions (including above): 2
 
-void	*ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, '\0', n);
-	return (s);
 }
 /*
 int	main(void)

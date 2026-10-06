@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 12:50:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/06 19:45:20 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 22:02:01 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_lst);
 }
-/*
+
 void	*ft_first_two(void *content)
 {
 	char	*str;
@@ -72,15 +72,7 @@ void	*ft_first_two(void *content)
 	str[i] = '\0';
 	return (str);
 }
-
-void	ft_dummy(void *content)
-{
-	char	*str;
-
-	str = (char *) content;
-	str++;
-}
-
+/*
 int	main(void)
 {
 	t_list	*lst1;
@@ -89,13 +81,17 @@ int	main(void)
 	t_list	*lst_cpy;
 	t_list	*ptr;
 	int		i;
+	char	*content;
 
-	lst1 = ft_init_node("fIrst Node");
-	lst2 = ft_init_node("2nd_nODe");
-	lst3 = ft_init_node("node no. 3");
+	content = ft_strdup("First");
+	lst1 = ft_lstnew(content);
+	content = ft_strdup("Second");
+	lst2 = ft_lstnew(content);
+	content = ft_strdup("Third");
+	lst3 = ft_lstnew(content);
 	ft_lstadd_back(&lst1, lst2);
 	ft_lstadd_back(&lst2, lst3);
-	lst_cpy = ft_lstmap(lst1, ft_first_two, ft_dummy);
+	lst_cpy = ft_lstmap(lst1, ft_first_two, free);
 	i = 0;
 	ptr = lst1;
     while (ptr)
@@ -113,7 +109,7 @@ int	main(void)
 		ptr = ptr->next;
 	}
 	printf("lst_cpy size:%u", ft_lstsize(lst_cpy));
-	ft_lstclear(&lst1, ft_free_content);
-	ft_lstclear(&lst_cpy, ft_free_content);
+	ft_lstclear(&lst1, free);
+	ft_lstclear(&lst_cpy, free);
 	return (0);
 }*/
