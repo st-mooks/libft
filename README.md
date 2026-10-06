@@ -1,14 +1,29 @@
-*This project has been created as part of the 42 curriculum by mbadarin*
-#LIBFT
-##A 42 Amman Porject
+*This project has been created as part of the 42 curriculum by mbadarin.*
+
+# LIBFT
+
+## A 42 Amman Porject
 
 ### Description
+
 A library conatinig my impliminations of several functions that do string, memory, and linked list manipulation.
+
 ### Instructions
+
 Use the provided make file to create an archive containig the preprocessed o files.
+
 ### Resoruces
-manual pages for each implemented function (if available).
+
+- Manual pages for each implemented function (if available).
+- [Geeksforgeeks.org](https://www.geeksforgeeks.org)
+- [Stackoverflow.com](https://www.stackoverflow.com)
+- [Freebsd.org](https://man.freebsd.org/cgi/man.cgi)
+- [Man7.org](https://www.man7.org/linux/man-pages/index.html)
+
+Use of AI was limited, and mainly used with explicit prompts such as *"I am a new C learner, facing issue (X). Do not give answers. Act as a socratic tutor and ask questions that prod me in the reight direction."*
+
 ### Detailed desriptions
+
 | Function | Prototype | Return type/value | Description |
 | -------- | --------- | ----------------- | ----------- |
 | ft_isalpha | int ft_isalpha(int c) | int: 1 if true, 0 if false | Checks if a character is a letter in the English alphabet (either upper and lower case). |

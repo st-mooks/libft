@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/21 15:02:29 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 11:34:15 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 15:51:54 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char		*dest_cpy;
 	const unsigned char	*src_cpy;
 
-	if (!dest || !src)
-		return (NULL);
 	dest_cpy = (unsigned char *)dest;
 	src_cpy = (const unsigned char *)src;
 	i = 0;

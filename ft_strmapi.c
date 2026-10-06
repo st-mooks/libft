@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 10:50:00 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 12:24:59 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 16:35:36 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*result;
 	unsigned int	i;
 
-	if (!s || !f)
-		return (NULL);
-	result = malloc(ft_strlen(s) * sizeof(char));
+	result = malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
 	i = 0;
@@ -31,6 +29,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		result[i] = f(i, s[i]);
 		i++;
 	}
+	result[i] = '\0';
 	return (result);
 }
 /*

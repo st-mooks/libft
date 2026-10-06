@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 11:15:03 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 12:39:09 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 18:28:02 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	s_len;
 	size_t	alloc_size;
 
-	if (!s)
-		return (NULL);
 	s_len = ft_strlen(s);
 	if (start + len <= s_len)
 		alloc_size = len + 1;
 	else if (start < s_len)
 		alloc_size = s_len - start + 1;
 	else
-		alloc_size = 0;
+	{
+		alloc_size = 1;
+		start = 0;
+	}
 	sub_s = malloc(alloc_size * sizeof(char));
 	if (!sub_s)
 		return (NULL);
@@ -52,11 +53,12 @@ int	main(int argc, char *argv[])
 				", SIZE_T\nEXITING\n");
 		exit(EXIT_FAILURE);
 	}
-	s = argv[1];
+	s = (const char *)argv[1];
 	start = ft_atoi(argv[2]);
 	len = (size_t)ft_atoi(argv[3]);
 	sub_s = ft_substr(s, start, len);
 	printf("s=\"%s\"\nstart=%u, len=%zu\nsub_s=\"%s\"\n", s, start, len, sub_s);
+	//printf("poop%d", strcmp(sub_s, ""));
 	free(sub_s);
 	printf("sub_s freed successfully\n");
 	return (0);

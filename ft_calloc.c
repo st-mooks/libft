@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 12:35:43 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 10:49:37 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 16:16:36 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,16 @@
 //ft_bzero can be substituted with  a static function here
 //Total number of functions (including above): 4
 
-static int	valid_args(size_t nmemb, size_t size)
-{
-	if (size == 0 || nmemb == 0)
-		return (0);
-	if (SIZE_MAX / size < nmemb)
-		return (0);
-	return (1);
-}
-
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*alloc_arr;
 
-	if (!valid_args(nmemb, size))
+	if (size == 0 || nmemb == 0)
+	{
+		alloc_arr = malloc(0);
+		return (alloc_arr);
+	}
+	if (SIZE_MAX / size < nmemb)
 		return (NULL);
 	alloc_arr = malloc(nmemb * size);
 	if (!alloc_arr)
@@ -45,7 +41,7 @@ int	main(void)
 	size_t	nmemb;
 	size_t	size;
 
-	nmemb = SIZE_MAX;
+	nmemb = 0;
 	size = SIZE_MAX;
 	ft_calloc_return = ft_calloc(nmemb, size);
 	calloc_return = calloc(nmemb, size);

@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 15:18:01 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 11:12:46 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 18:31:38 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	if (!lst || !del)
 		return ;
-	while ((*lst)->next)
+	while (*lst)
 	{
 		next = (*lst)->next;
 		ft_lstdelone(*lst, del);
 		*lst = next;
 	}
-	ft_lstdelone(*lst, del);
 }
 /*
 int	main(void)

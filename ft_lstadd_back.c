@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:38:31 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 11:22:35 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 19:08:45 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last;
-
-	if (!lst || !new)
+	if (!new)
 		return ;
-	last = ft_lstlast(*lst);
-	last->next = new;
+	if (!*lst)
+		*lst = new;
+	else
+		ft_lstlast(*lst)->next = new;
 }
 /*
 int	main(void)

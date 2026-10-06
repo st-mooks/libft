@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:27:23 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 10:52:47 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 19:12:36 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,17 @@ int	main(void)
 	printf("Last element in linked list=%p with content=%s"
 			"", ft_lstlast(lst1), (char *)ft_lstlast(lst1)->content);
 	return (0);
+}*/
+/*
+int main()
+{
+	t_list * l =  NULL;
+	t_list *node = ft_lstnew((void*)1);
+	t_list *node2 = ft_lstnew("hi");
+	ft_lstadd_back(&l, node);
+	ft_lstadd_back(&l, node2);
+	printf("%p\n", ft_lstlast(l)->next);
+	printf("%s", ft_lstlast(l)->content);
+	free(node);
+	free(node2);	
 }*/

@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/22 12:37:50 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 12:42:30 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 16:39:51 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -16,12 +16,12 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-/*//Includes for testing purposes only
+//Includes for testing purposes only
 # include <stdio.h>
 # include <ctype.h>
 # include <limits.h>
 # include <string.h>
-# include <bsd/string.h>*/
+# include <bsd/string.h>
 
 typedef struct s_list
 {
@@ -53,11 +53,14 @@ void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_putchar_fd(char c, int fd);
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
 void			ft_putstr_fd(char *s, int fd);
 char			**ft_split(char const *s, char c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *s);
 char			*ft_strjoin(char const *s1, char const *s2);
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
 size_t			ft_strlen(const char *str);
@@ -69,7 +72,4 @@ char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
-//Following prototypes for helper functions for testing purposes only
-t_list			*ft_init_node(void *content);
-void			ft_free_content(void *content);
 #endif

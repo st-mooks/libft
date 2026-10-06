@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 13:50:20 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 08:58:01 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 18:44:24 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst || !new)
+	if (!new)
 		return ;
 	new->next = *lst;
 	*lst = new;

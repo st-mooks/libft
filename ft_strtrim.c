@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@student.42amman.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 12:13:39 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/01 13:07:28 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 18:36:27 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //ft_strlen can be substituted with a static function here
 //ft_strlcpy can be substituted with a static function here
-//Total number of functions (including above): 3
+//Total number of functions (including above): 4
 
 static int	char_in_set(const char *set, char c)
 {
@@ -37,10 +37,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 		ptr++;
 	start = ptr - s1;
 	ptr = (char *)s1 + ft_strlen(s1) - 1;
-	while (char_in_set(set, *ptr))
+	while (char_in_set(set, *ptr) && ft_strlen(ptr) <= ft_strlen(s1))
 		ptr--;
 	end = ptr - s1 + 1;
 	size = end - start + 1;
+	if (size < 1)
+		size = 1;
 	trim_s = malloc((size) * sizeof(char));
 	if (!trim_s)
 		return (NULL);
@@ -61,7 +63,7 @@ int	main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	s1 = argv[1];
-	set = argv[2];
+	set = argv[2] "bab\0";
 	s2 = ft_strtrim(s1, set);
 	printf("s1=\"%s\" set=\"%s\"\ns2=\"%s\"\n", s1, set, s2);
 	free(s2);

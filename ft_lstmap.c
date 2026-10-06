@@ -6,7 +6,7 @@
 /*   By: mbadarin <mbadarin@students.42amman.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 12:50:32 by mbadarin          #+#    #+#             */
-/*   Updated: 2026/10/05 12:08:51 by mbadarin         ###   ########.fr       */
+/*   Updated: 2026/10/06 19:45:20 by mbadarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,27 @@
 
 //ft_lstclear can be substituted with a static function here
 //ft_lstdelone can be substituted with a static function here
-//Total number of functions (including above): 3
+//ft_lstnew can be substituted with a static function here
+//Total number of functions (including above): 5
+
+static int	fill_lst(t_list **lst, void *content, void (*del)(void *))
+{
+	t_list	*node;
+
+	node = ft_lstnew(content);
+	if (!node)
+	{
+		del(content);
+		ft_lstclear(lst, del);
+		return (0);
+	}
+	ft_lstadd_back(lst, node);
+	return (1);
+}
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
-	t_list	*node;
 	void	*new_content;
 
 	if (!lst || !f || !del)
@@ -27,19 +42,16 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_content = f(lst->content);
 	new_lst = ft_lstnew(new_content);
 	if (!new_lst)
+	{
+		del(new_content);
 		return (NULL);
+	}
 	lst = lst->next;
 	while (lst)
 	{
 		new_content = f(lst->content);
-		node = ft_lstnew(new_content);
-		if (!node)
-		{
-			ft_lstclear(&new_lst, del);
+		if (!fill_lst(&new_lst, new_content, del))
 			return (NULL);
-		}
-		ft_lstadd_back(&new_lst, node);
-		del(lst->content);
 		lst = lst->next;
 	}
 	return (new_lst);
